@@ -9,28 +9,35 @@
 
 package TCS_IPA;
 import java.util.*;
-
-public class AnagramStrings {
+public class AnagramStrings
+{
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String s = sc.nextLine();
-        String t = sc.nextLine();
+        String s1 = sc.nextLine();
+        s1=s1.toUpperCase();
+        String s2 = sc.nextLine();
+        s2=s2.toUpperCase();
+        boolean flag=true;
 
-        boolean result = isAnagram(s,t);
-        if(result){
-            System.out.println("true");
-        } else{
-            System.out.println("false");
-        }
-    }
-    public static boolean isAnagram(String s, String t){
-        if(s.length() != t.length()){
-            return false;
-        }
-        char[] sArray = s.toCharArray();
-        char[] tArray = t.toCharArray();
-        Arrays.sort(sArray);
-        Arrays.sort(tArray);
-        return Arrays.equals(sArray,tArray);
+        // System.out.println(s1+" "+s2);
+        int ch[]= new int [26];
+        for (int i=0;i<s1.length();i++)
+            {
+                ch[s1.charAt(i)-65]++;
+                ch[s2.charAt(i)-65]--;
+            }
+
+        for (int i=0;i<26;i++)
+            {
+                if(ch[i]!=0)
+                    {
+                        flag=false;
+                    }
+            }
+        if(!flag)
+            System.out.println("Not Anagram");
+        else
+            System.out.println("Anagram");
+            sc.close();
     }
 }
