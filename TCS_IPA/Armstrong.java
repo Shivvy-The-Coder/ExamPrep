@@ -24,5 +24,7 @@ public class Armstrong {
             System.out.println("yes");
         else
             System.out.println("No");
+
+        sc.close();
     }
 }
