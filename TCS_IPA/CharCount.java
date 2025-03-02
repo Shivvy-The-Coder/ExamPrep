@@ -24,6 +24,8 @@ public class CharCount {
             System.out.println(count);
         } else{
             System.out.println("NA");
+
+            sc.close();
         }
     }
 }
