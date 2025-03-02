@@ -6,18 +6,23 @@
 
 package TCS_IPA;
 import java.util.*;
+
 public class Armstrong {
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String num = sc.nextLine();
-        int sum = 0;
-        for(int i = 0 ; i  < num.length(); i++){
-            sum += Math.pow(Integer.parseInt(String.valueOf(num.charAt(i))),num.length());
-        }
-        if(sum == Integer.parseInt(num)){
-            System.out.println("Yes, the number is an Armstrong number.");
-        } else{
-            System.out.println("No, the number is not an Armstrong number.");
-        }
+        int x =sc.nextInt();
+        int dup=x;
+        int sum=0;
+        while(x!=0)
+            {
+                int rem = x%10;
+                sum+=Math.pow(rem,3);
+                x/=10;
+            }
+        if(sum==dup)
+            System.out.println("yes");
+        else
+            System.out.println("No");
     }
 }
