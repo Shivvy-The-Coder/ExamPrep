@@ -4,26 +4,27 @@
 
 package TCS_IPA;
 import java.util.Scanner;
-
-public class CharRepeat {
-    public static void main(String[] args){
+public class CharRepeat
+{
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String s = sc.nextLine();
-        int count = 0;
-        char ch = s.charAt(0);
-        for(int k = 0; k < s.length(); k++)
-        {
-            if(ch==s.charAt(k)){
-                count++;
-            } else{
-                System.out.print(ch+""+count);
-                ch = s.charAt(k);
-                count=0;
-                k--;
+        String s = sc.nextLine()+" ";
+        String ans="";
+        int count=1;
+        int si=0;
+        for(int i=1;i<s.length();i++)
+            {
+                if(s.charAt(si)==s.charAt(i))
+                    {
+                        count++;
+                    }
+                else
+                    {
+                        ans=ans+s.charAt(i-1)+count;
+                        count=1;
+                        si=i;
+                    }
             }
-            if(ch == s.charAt(s.length()-1) && k == s.length()-1){
-                System.out.println(ch+""+count);
-            }
-        }
+        System.out.println(ans);
     }
 }

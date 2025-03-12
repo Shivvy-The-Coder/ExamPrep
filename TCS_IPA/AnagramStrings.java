@@ -1,4 +1,3 @@
-
 // Given two strings s and t, return true if t is an anagram of s, and false otherwise.
 
 // Input: s = "anagram" t = "nagaram"
@@ -39,5 +38,6 @@ public class AnagramStrings
         System.out.println("yes");
         else
         System.out.println("no");
+        sc.close();
 }    }
 }
