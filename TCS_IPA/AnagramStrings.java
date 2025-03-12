@@ -18,26 +18,26 @@ public class AnagramStrings
         String s2 = sc.nextLine();
         s2=s2.toUpperCase();
         boolean flag=true;
-
-        // System.out.println(s1+" "+s2);
-        int ch[]= new int [26];
+        if(s1.length()!=s2.length())
+            System.out.println("No");
+        else
+        {    
+        int ch []= new int[26];
         for (int i=0;i<s1.length();i++)
             {
-                ch[s1.charAt(i)-65]++;
-                ch[s2.charAt(i)-65]--;
+                char ch1 = s1.charAt(i);
+                char ch2 = s2.charAt(i);
+                ch[ch1-65]++;
+                ch[ch2-65]--;
             }
-
         for (int i=0;i<26;i++)
             {
                 if(ch[i]!=0)
-                    {
-                        flag=false;
-                    }
+                    flag = false;
             }
-        if(!flag)
-            System.out.println("Not Anagram");
+        if(flag)    
+        System.out.println("yes");
         else
-            System.out.println("Anagram");
-            sc.close();
-    }
+        System.out.println("no");
+}    }
 }
