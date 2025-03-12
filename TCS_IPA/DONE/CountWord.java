@@ -16,16 +16,13 @@ public class CountWord {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String s = sc.nextLine();
-        String[] arr = s.split(" ");
-        int count = 0;
-//        System.out.println(Arrays.toString(arr));
-
-        for(int i = 0; i < arr.length; i++){
-            if(arr[i] != ""){
-                count++;
+        String words[] = s.split(" ");
+        int count=0;
+        for(int i=0;i<words.length;i++)
+            {
+                if(words[i]!="")
+                    count++;  
             }
-
-        }
-        System.out.println("Number of Words : "+count);
+        System.out.println(count);
     }
 }
