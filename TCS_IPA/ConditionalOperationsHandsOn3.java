@@ -18,39 +18,46 @@
 package TCS_IPA;
 import java.util.*;
 
-public class ConditionalOperationsHandsOn3 {
-    public static void main(String[] args) throws Exception {
-        /* Enter your code here. Read input from STDIN. Print output to STDOUT */
-        double x1,y1,x2,y2,x3,y3;
-        Scanner scn=new Scanner(System.in);
-        x1=scn.nextDouble();
-        y1=scn.nextDouble();
-        x2=scn.nextDouble();
-        y2=scn.nextDouble();
-        x3=scn.nextDouble();
-        y3=scn.nextDouble();
-        Point1 p1=new Point1(x1, y1);
-        Point1 p2=new Point1(x2, y2);
-        Point1 p3=new Point1(x3, y3);
-        Point1 highest=pointWithHighestOriginDistance(p1, p2, p3);
-        System.out.format("%.1f \n",highest.x);
-        System.out.format("%.1f",highest.y);
+class Solution
+{
+    public static void main(String[] args) {
+       point one = new point(2,2);
+       point two = new point(3,3);
+       point three = new point(-4,-4);
+       pointWithHighestOriginDistance(one, two, three);
     }
-    public static Point1 pointWithHighestOriginDistance(Point1 p1, Point1 p2, Point1 p3)
+
+    public static void pointWithHighestOriginDistance(point p1, point p2, point p3)
+        {
+            double dis1=caluclateDistanceFromOrigin(p1.x, p1.y);
+            double dis2=caluclateDistanceFromOrigin(p2.x, p2.y);
+            double dis3=caluclateDistanceFromOrigin(p3.x, p3.y);
+            if(dis1>=dis2 && dis1>=dis3)    
+                System.out.print(p1.x+" "+p1.y);
+            else if(dis2>=dis1 && dis2>=dis3)    
+            System.out.print(p2.x+" "+p2.y);
+            else
+            System.out.print(p3.x+" "+p3.y);
+                
+        }
+
+    public static double caluclateDistanceFromOrigin(double x, double y)
     {
-        double d1=Math.sqrt(p1.x*p1.x+p1.y*p1.y);
-        double d2=Math.sqrt(p2.x*p2.x+p2.y*p2.y);
-        double d3=Math.sqrt(p3.x*p3.x+p3.y*p3.y);
-        return d1>d2?(d1>d3?p1:p3):(d2>d3?p2:p3);
+        double ans = (double)(Math.pow(x, 2)+Math.pow(y, 2));
+        return Math.sqrt(ans);
     }
+    
 }
 
-class Point1
+
+
+class point
 {
-    double x,y;
-    Point1(double x, double y)
-    {
-        this.x=x;
-        this.y=y;
-    }
+    double x;
+    double y;
+    point(double x,double y)
+        {
+            this.x=x;
+            this.y=y;
+        }
 }
