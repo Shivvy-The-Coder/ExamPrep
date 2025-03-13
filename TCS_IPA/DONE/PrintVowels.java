@@ -1,5 +1,5 @@
 
-// Enter a String and print all the Vowels as it is which is available in the string at 0th index.
+// Enter a String and print all the Vowels as it is which is available in the string at 0th index of every word in the sentence
 
 // Input: Hello I am a Student
 // Output: Iaa
