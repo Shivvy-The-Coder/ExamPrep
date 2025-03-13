@@ -11,12 +11,15 @@ public class Missing {
         for(int i = 0; i < arr.length; i++){
             arr[i] = sc.nextInt();
         }
-        for(int i = 0; i < arr.length-1; i++){
-            int num = arr[i];
-            while(num+1 != arr[i+1]){
-                System.out.print(num+1+" ");
-                num++;
+        Arrays.sort(arr);
+        int id=0;
+        for (int i=1;i<arr[7];i++)
+            {
+                if(i!=arr[id])
+                    System.out.print(i+" ");
+                else
+                id++;
             }
-        }
+        
     }
 }

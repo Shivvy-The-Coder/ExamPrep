@@ -9,7 +9,8 @@
 package TCS_IPA;
 import java.util.Scanner;
 
-class FirstPalindromicString {
+class FirstPalindromicString 
+{
     public String firstPalindrome(String[] words) {
         for(String str: words){
             if(isPalindrome(str)){
