@@ -18,6 +18,6 @@ public class MaximumASCII {
             }
         }
         System.out.println(ch);
-
+        sc.close();
     }
 }
